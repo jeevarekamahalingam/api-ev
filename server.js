@@ -5,6 +5,7 @@ import chargingStationRoutes from './chargingStation/routes.js';
 import chargePointRoutes from './chargePoint/routes.js';
 import chargeConnector from './chargingConnector/routes.js'
 import session from './session/routes.js'
+import wallet from './wallet/routes.js'
 dotenv.config();
 
 const app = express();
@@ -14,6 +15,7 @@ app.use('/api/charging-station',chargingStationRoutes);
 app.use('/api/charge-point',chargePointRoutes);
 app.use('/api/charge-connector',chargeConnector);
 app.use('/api/session',session);
+app.use('/api/wallet',wallet);
  app.get('/', (req, res) => { res.send('Hello from Express.js!'); });
 app.listen(PORT, (err) => {
   if(err)console.log("error found");
