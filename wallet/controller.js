@@ -13,16 +13,3 @@ export const getBalance=async(req,res)=>{
         res.status(500).send('Server error');
     }
 }
-
-// export const deductWallet=async(req,res)=>{
-//     try{
-//         id=getId(req);
-//         await pool.query('  Update session set session_status=\'stopped\',end_time=now(),charge_duration=now()-started_time where id=$1 returning *',[id]);
-//         await pool.query('update charging_connector set session_status=\'available\' where id=(select charger_and_connector from session where id=$1) returning *',[id]);
-//         await pool.query      
-//     }
-//     catch(err){
-//         console.error(err);
-//         res.status(500).send('Server error');
-//     }
-// }

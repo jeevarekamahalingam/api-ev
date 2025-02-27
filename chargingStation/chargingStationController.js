@@ -48,7 +48,7 @@ export const updateStation = async (req, res) => {
       'UPDATE charging_station SET charge_point_name=$1, no_of_charge_points=$2, sanctioned_load_kw=$3, address=$4, cpo_number=$5 WHERE id=$6 RETURNING *',
       [charge_point_name, no_of_charge_points, sanctioned_load_kw, address, cpo_number, id]
     );
-    console.log(result);
+    // console.log(result);
     if (result.rows.length === 0) return res.status(404).send('Charging Station Not Found');
     res.json(result.rows[0]);
   } catch (err) {
